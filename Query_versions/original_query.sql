@@ -2,6 +2,7 @@ DROP DATABASE assignment_2;
 CREATE DATABASE assignment_2;
 USE assignment_2;
 
+EXPLAIN ANALYZE 
 SELECT
     pb.genre,
     pb.author,

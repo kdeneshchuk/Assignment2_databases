@@ -1,3 +1,4 @@
+EXPLAIN analyze
 WITH books_joined AS (
 SELECT 
 	pb.genre AS genre,
@@ -35,7 +36,7 @@ SELECT
 FROM books_joined b
 LEFT JOIN popular_stats ps 
 	ON ps.author = b.author
-GROUP BY b.genre, b.author
+GROUP BY  b.author, b.genre
 HAVING COUNT(DISTINCT b.title) >= 2
 ORDER BY avg_rating_amazon DESC
 LIMIT 50;
